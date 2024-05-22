@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.com"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<head>
+
+    <title></title></head>
+<body>
+<header id="site-header" class="fixed-top">
+    <div class="container">
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <a class="navbar-brand" th:href="@{/index}"><i class="fas fa-graduation-cap"></i>Phystech School
+            </a>
+            <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon fa icon-expand fa-bars"></span>
+                <span class="navbar-toggler-icon fa icon-close fa-times"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarScroll">
+                <ul class="navbar-nav ms-auto my-2 my-lg-0 navbar-nav-scroll">
+                    <li class="nav-item" sec:authorize="isAnonymous()">
+                        <a th:classappend="${(#httpServletRequest.getRequestURI() == '/index' ? 'active':'')+
+                        (#httpServletRequest.getRequestURI() == '/' ? 'active':'')}"
+                           class="nav-link" th:href="@{/index}" aria-current="page">Домашняя страница</a>
+                    </li>
+                    <li class="nav-item" sec:authorize="isAuthenticated()">
+                        <a th:classappend="${(#httpServletRequest.getRequestURI() == '/dashboard' ? 'active':'')+
+                        (#httpServletRequest.getRequestURI() == '/' ? 'active':'')}"
+                           class="nav-link" th:href="@{/dashboard}" aria-current="page">Панель</a>
+                    </li>
+                    <li class="nav-item" sec:authorize="isAnonymous()">
+                        <a th:classappend="${#httpServletRequest.getRequestURI() == '/contact' ? 'active':''}"
+                           class="nav-link" th:href="@{/contact}">Контакты</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li>
+                        <div sec:authorize="isAuthenticated()">
+                            <a th:classappend="${#httpServletRequest.getRequestURI() == '/logout' ? 'active':''}"
+                               class="btn main-btn" th:href="@{/logout}">Выйти из системы</a>
+                        </div>
+                    </li>
+                    <li>
+                        <div sec:authorize="isAnonymous()">
+                            <a th:href="@{/login}" class="btn main-btn">Войти в систему</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="cont-ser-position">
+                <nav class="navigation">
+                    <div class="theme-switch-wrapper">
+                        <label class="theme-switch" for="checkbox">
+                            <input type="checkbox" id="checkbox">
+                            <div class="mode-container">
+                                <i class="gg-sun"></i>
+                                <i class="gg-moon"></i>
+                            </div>
+                        </label>
+                    </div>
+                </nav>
+            </div>
+        </nav>
+    </div>
+</header>
+</body>
+</html>

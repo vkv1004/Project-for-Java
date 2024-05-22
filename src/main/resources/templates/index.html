@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.com">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Phystech School</title>
+    <link rel="shortcut icon" href="assets/images/favicon.ico" type="image/ico">
+    <link href="//fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style-starter.css">
+</head>
+
+<body>
+
+<div id="header" th:replace="header :: header"></div>
+
+<section id="home" class="w3l-banner py-5">
+    <div class="banner-content">
+        <div class="container py-4">
+            <div class="row align-items-center pt-sm-5 pt-4">
+                <div class="col-md-6">
+                    <h3 class="mb-lg-4 mb-3">Ваши дети заслуживают<span class="d-block">лучшего образования</span>
+                    </h3>
+                    <p class="banner-sub">Высокое качество образования, сильная академическая база, престиж и репутация,
+                        широкие возможности для студентов, сильное сообщество</p>
+                    <div class="d-flex align-items-center buttons-banner">
+                        <a th:href="@{/contact}" class="btn btn-style mt-lg-5 mt-4">Присоединиться сейчас</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="services-w3l-block py-5" id="features">
+    <div class="container py-md-5 py-4">
+        <div class="title-main text-center mx-auto mb-md-5 mb-4" style="max-width:500px;">
+            <p class="text-uppercase">Лучшие характеристики</p>
+            <h3 class="title-style">Достигайте своих целей вместе с Phystech School</h3>
+        </div>
+        <div class="row">
+            <div class="col-md-6 col-lg-3 d-flex align-items-stretch">
+                <div class="icon-box icon-box-clr-1">
+                    <div class="icon"><i class="fas fa-user-friends"></i></div>
+                    <h4 class="title"><a href="#about">Высокое качество образования</a></h4>
+                    <p>Квалифицированные преподаватели и продвинутые образовательные программы</p>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3 d-flex align-items-stretch mt-md-0 mt-4">
+                <div class="icon-box icon-box-clr-2">
+                    <div class="icon"><i class="fas fa-book-reader"></i></div>
+                    <h4 class="title"><a href="#about">Сильная академическая база</a></h4>
+                    <p>Уникальные научные исследования, лаборатории и технологические центры</p>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3 d-flex align-items-stretch mt-lg-0 mt-4">
+                <div class="icon-box icon-box-clr-3">
+                    <div class="icon"><i class="fas fa-user-graduate"></i></div>
+                    <h4 class="title"><a href="#about">Широкие возможности для студентов</a></h4>
+                    <p>Доступ к различным клубам, олимпиадам, стажировкам, конференциям и другим мероприятиям</p>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3 d-flex align-items-stretch mt-lg-0 mt-4">
+                <div class="icon-box icon-box-clr-4">
+                    <div class="icon"><i class="fas fa-university"></i></div>
+                    <h4 class="title"><a href="#about">Престиж и репутация</a></h4>
+                    <p>Богатая история и отличная репутация</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="w3l-servicesblock pt-lg-5 pt-4 pb-5 mb-lg-5" id="about">
+    <div class="container pb-md-5 pb-4">
+        <div class="row pb-xl-5 align-items-center">
+            <div class="col-lg-6 position-relative home-block-3-left pb-lg-0 pb-5">
+                <div class="position-relative">
+                    <img src="assets/images/img1.jpg" alt="" class="img-fluid radius-image">
+                </div>
+                <div class="imginfo__box">
+                    <h6 class="imginfo__title">Запишитесь на приём сегодня!</h6>
+                    <p>Присоединяйтесь уже сегодня, пока не стало поздно</p>
+                    <a href="tel:+7 (928) 105-97-18"><i class="fas fa-phone-alt"></i>+7 (928) 105-97-18</a>
+                </div>
+            </div>
+            <div class="col-xl-5 col-lg-6 offset-xl-1 mt-lg-0 mt-5 pt-lg-0 pt-5">
+                <h3 class="title-style">Мы - лучший выбор для вашего ребёнка</h3>
+                <ul class="mt-4 list-style-lis pt-lg-1">
+                    <li><i class="fas fa-check-circle"></i>Высокий уровень преподавательского состава</li>
+                    <li><i class="fas fa-check-circle"></i>Качественное образование,
+                        ориентированное на практическое применение знаний</li>
+                    <li><i class="fas fa-check-circle"></i>Сильная математическая и физико-техническая база</li>
+                    <li><i class="fas fa-check-circle"></i>Широкие возможности для научно-исследовательской работы</li>
+                    <li><i class="fas fa-check-circle"></i>Сильные связи с индустрией и возможности стажировок в
+                        крупных компаниях</li>
+                    <li><i class="fas fa-check-circle"></i>Активная студенческая жизнь и разнообразные возможности для
+                        самореализации</li>
+                </ul>
+                <a th:href="@{/contact}" class="btn btn-style mt-5">Подайте заявку прямо сейчас</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<br>
+<br>
+<br>
+
+<section class="w3l-call-to-action-6">
+    <div class="container py-md-5 py-sm-4 py-5">
+        <div class="d-lg-flex align-items-center justify-content-between">
+            <div class="left-content-call">
+                <h3 class="title-big">Позвоните, чтобы записать своего ребёнка</h3>
+                <p class="text-white mt-1">Начните меняться уже сегодня!</p>
+            </div>
+            <div class="right-content-call mt-lg-0 mt-4">
+                <ul class="buttons">
+                    <li class="phone-sec me-lg-4"><i class="fas fa-phone-volume"></i>
+                        <a class="call-style-w3" href="tel: +7 (928) 105-97-18">+7 (928) 105-97-18</a>
+                    </li>
+                    <li><a th:href="@{/contact}" class="btn btn-style btn-style-2 mt-lg-0 mt-3">Присоединяйтесь
+                        бесплатно</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div th:replace="footer :: footer"></div>
+<script src="assets/js/counter.js"></script>
+</body>
+
+</html>

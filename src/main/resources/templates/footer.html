@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <title></title></head>
+<body>
+<footer class="w3l-footer-29-main">
+    <div class="footer-29 pt-5 pb-4">
+        <div class="container pt-md-4">
+            <div class="row footer-top-29">
+                <div class="col-lg-4 col-md-6 footer-list-29">
+                    <h6 class="footer-title-29">Контактная информация</h6>
+                    <p class="mb-2 pe-xl-5">Адрес: Россия, Долгопрудный, Первомайская 32к2, 141701
+                    </p>
+                    <p class="mb-2">Номер телефона: <a href="tel:+7 (928) 105-97-18">+7 (928) 105-97-18</a></p>
+                    <p class="mb-2">Электронная почта: <a href="nika5000.com@mail.ru">nika5000.com@mail.ru</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <button onclick="topFunction()" id="movetop" title="Go to top">
+        <span class="fas fa-level-up-alt" aria-hidden="true"></span>
+    </button>
+    <script>
+        window.onscroll = function () {
+            scrollFunction()
+        };
+
+        function scrollFunction() {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                document.getElementById("movetop").style.display = "block";
+            } else {
+                document.getElementById("movetop").style.display = "none";
+            }
+        }
+
+        function topFunction() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        }
+
+    </script>
+
+    <script src="/assets/js/jquery-3.3.1.min.js"></script>
+
+    <script src="/assets/js/theme-change.js"></script>
+
+    <script>
+        $(window).on("scroll", function () {
+            const scroll = $(window).scrollTop();
+
+            if (scroll >= 80) {
+                $("#site-header").addClass("nav-fixed");
+            } else {
+                $("#site-header").removeClass("nav-fixed");
+            }
+        });
+
+        $(".navbar-toggler").on("click", function () {
+            $("header").toggleClass("active");
+        });
+        $(document).on("ready", function () {
+            if ($(window).width() > 991) {
+                $("header").removeClass("active");
+            }
+            $(window).on("resize", function () {
+                if ($(window).width() > 991) {
+                    $("header").removeClass("active");
+                }
+            });
+        });
+
+    </script>
+
+    <script>
+        $(function () {
+            $('.navbar-toggler').click(function () {
+                $('body').toggleClass('noscroll');
+            })
+        });
+
+    </script>
+
+    <script src="/assets/js/bootstrap.min.js"></script>
+
+</footer>
+
+<loginfooter>
+    <script src="assets/js/login.js"></script>
+    <button onclick="topFunction()" id="movetop" title="Go to top">
+        <span class="fas fa-level-up-alt" aria-hidden="true"></span>
+    </button>
+    <script>
+        window.onscroll = function () {
+            scrollFunction()
+        };
+
+        function scrollFunction() {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                document.getElementById("movetop").style.display = "block";
+            } else {
+                document.getElementById("movetop").style.display = "none";
+            }
+        }
+
+        function topFunction() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        }
+
+    </script>
+
+    <script src="assets/js/jquery-3.3.1.min.js"></script>
+
+    <script src="assets/js/counter.js"></script>
+
+    <script src="assets/js/theme-change.js"></script>
+
+    <script>
+        $(window).on("scroll", function () {
+            const scroll = $(window).scrollTop();
+
+            if (scroll >= 80) {
+                $("#site-header").addClass("nav-fixed");
+            } else {
+                $("#site-header").removeClass("nav-fixed");
+            }
+        });
+
+        $(".navbar-toggler").on("click", function () {
+            $("header").toggleClass("active");
+        });
+        $(document).on("ready", function () {
+            if ($(window).width() > 991) {
+                $("header").removeClass("active");
+            }
+            $(window).on("resize", function () {
+                if ($(window).width() > 991) {
+                    $("header").removeClass("active");
+                }
+            });
+        });
+
+    </script>
+
+    <script>
+        $(function () {
+            $('.navbar-toggler').click(function () {
+                $('body').toggleClass('noscroll');
+            })
+        });
+
+    </script>
+
+    <script src="assets/js/bootstrap.min.js"></script>
+
+</loginfooter>
+</body>
+</html>

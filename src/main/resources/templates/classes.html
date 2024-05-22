@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Phystech School</title>
+    <link rel="shortcut icon" href="/assets/images/favicon.ico" type="image/ico">
+    <link href="//fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <link rel="stylesheet" href="/assets/css/style-starter.css">
+</head>
+
+<body>
+
+<div th:replace="header :: header">...</div>
+
+<section class="inner-banner py-4">
+    <div class="w3l-breadcrumb py-lg-4">
+        <div class="container pt-4 pb-sm-4">
+            <h4 class="inner-text-title pt-5">Сведения о классе</h4>
+            <ul class="breadcrumbs-custom-path">
+                <li><a th:href="@{/dashboard}">Панель</a></li>
+                <li class="active"><i class="fas fa-angle-right"></i>Классы</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<div class="site-section">
+
+    <div class="table-responsive-class">
+
+        <div class="row mb-4">
+            <ul>
+                <li class="alert alert-danger" role="radio"
+                    th:each="error: ${#fields.errors('phystechClass.*')}" th:text="${error}"></li>
+                <li class="alert alert-success text-center" role="radio"
+                    th:if="${!#strings.isEmpty(addMessage)}" th:text="${addMessage}"></li>
+            </ul>
+            <div class="overview-wrap">
+                <h3 class="heading-21921">Подробности о занятиях в Phystech School</h3>
+                <button class="btn main-btn" type="button"
+                        data-bs-toggle="modal" data-bs-target="#createClass">ДОБАВИТЬ КЛАСС
+                </button>
+            </div>
+        </div>
+        <div class="modal fade login-block" id="createClass" tabindex="-1">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Создать новый класс</h5>
+                        <button type="button" class="btn-close btn-close-red" data-bs-dismiss="modal"
+                                aria-label="Close"></button>
+                    </div>
+                    <form th:action="@{/admin/addNewClass}" method="post" th:object="${phystechClass}">
+                        <div class="modal-body">
+                            <label class="mb-2 required">Название класса</label>
+                            <label>
+                                <input type="text" class="contact-input" th:field="*{name}" placeHolder="Введите название класса"
+                                       required>
+                            </label>
+                        </div>
+                        <div class="modal-footer justify-content-center">
+                            <button type="submit" class="btn btn-style btn-style-3">Сохранить</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <table class="table table-striped table-hover" style="text-align:center">
+            <thead class="table-dark">
+            <tr>
+                <th scope="col">Идентификатор класса</th>
+                <th scope="col">Название класса</th>
+                <th colspan="2">Действие</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="phystechClass: ${phystechClasses}">
+                <td class="td-color" th:text="${phystechClass.classId}"></td>
+                <td class="td-color" th:text="${phystechClass.name}"></td>
+                <td><a th:href="@{/admin/displayStudents(classId=${phystechClass.classId})}"
+                       class="btn btn-success">ПРОСМОТР</a></td>
+                <td><a th:href="@{/admin/deleteClass(id=${phystechClass.classId})}" class="btn btn-danger">УДАЛИТЬ</a></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="login-center">
+        <a th:href="@{/dashboard}">
+            <button class="btn btn-style btn-style-3">ОБРАТНО</button>
+        </a>
+    </div>
+</div>
+
+<div th:replace="footer :: footer">...</div>
+</body>
+
+</html>
